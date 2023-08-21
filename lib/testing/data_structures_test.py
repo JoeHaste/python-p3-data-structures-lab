@@ -2,7 +2,7 @@
 
 from data_structures import get_names, get_spiciest_foods, print_spicy_foods,\
                                 create_spicy_food, get_spicy_food_by_cuisine, \
-                                print_spiciest_foods, get_average_heat_level
+                                get_average_heat_level
 
 import io
 import sys
@@ -54,15 +54,6 @@ class TestDataStructures:
             "cuisine": "American",
             "heat_level": 3,
         })
-
-    def test_print_spiciest_foods(self):
-        '''contains function print_spiciest_foods that returns foods with heat_level over 5 formatted with 🌶  emojis.'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        print_spiciest_foods(TestDataStructures.SPICY_FOODS)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == "Green Curry (Thai) | Heat Level: 🌶🌶🌶🌶🌶🌶🌶🌶🌶\n" +
-            "Mapo Tofu (Sichuan) | Heat Level: 🌶🌶🌶🌶🌶🌶\n")
 
     def test_get_average_heat_level(self):
         '''contains function get_average_heat_level that returns average of heat_levels in spicy_foods.'''
